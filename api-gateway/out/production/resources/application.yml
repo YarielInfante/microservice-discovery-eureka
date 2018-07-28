@@ -1,3 +1,7 @@
 server:
   port: 8900
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
