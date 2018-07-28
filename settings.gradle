@@ -5,4 +5,5 @@ include 'customers-service'
 include 'pages-service'
 include 'reviews-service'
 include 'eureka-server'
+include 'configuration-server'
 
