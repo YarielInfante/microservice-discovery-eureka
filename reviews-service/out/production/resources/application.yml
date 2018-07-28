@@ -1,0 +1,14 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /library/reviews
+
+spring:
+  data:
+    mongodb:
+      database: reviews
+    rest:
+      default-media-type: application/json
+
+
+

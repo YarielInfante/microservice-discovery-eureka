@@ -1,0 +1,8 @@
+rootProject.name = 'library'
+include 'api-gateway'
+include 'books-service'
+include 'customers-service'
+include 'pages-service'
+include 'reviews-service'
+include 'eureka-server'
+
