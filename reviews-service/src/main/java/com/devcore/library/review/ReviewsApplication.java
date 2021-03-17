@@ -1,5 +1,6 @@
 package com.devcore.library.review;
 
+import com.devcore.library.review.domain.Review;
 import com.devcore.library.review.repository.IReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -9,6 +10,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @EnableDiscoveryClient
 @SpringBootApplication
@@ -21,7 +24,7 @@ public class ReviewsApplication {
         IReviewRepository reviewRepository;
 
         @GetMapping("/")
-        ResponseEntity getAll() {
+        ResponseEntity<List<Review>> getAll() {
 
             System.out.println("/books");
             return ResponseEntity.ok(reviewRepository.findAll());
