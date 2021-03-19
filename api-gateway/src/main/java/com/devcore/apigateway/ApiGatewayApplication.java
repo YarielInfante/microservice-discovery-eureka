@@ -26,7 +26,7 @@ public class ApiGatewayApplication {
 
         @RefreshScope
         @GetMapping("/greet")
-        String greet(){
+        public String greet(){
             return greeting;
         }
     }
