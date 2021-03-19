@@ -8,7 +8,7 @@ public class Tests {
 
     @Test
     public void test1(){
-        boolean now = true;
+        boolean now = false;
         Assert.isTrue(now, "it is false");
     }
 }
