@@ -15,7 +15,6 @@ plugins {
     id 'idea'
     id 'org.springframework.boot'
     id 'io.spring.dependency-management'
-    id "org.sonarqube" version "3.1.1"
 }
 
 group = 'com.devcore.library'
@@ -25,8 +24,6 @@ sourceCompatibility = 1.8
 sonarqube {
     properties {
         property "sonar.projectKey", "ax_microservice-discovery-eureka_reviews_service"
-        property "sonar.organization", "yarielinfante"
-        property "sonar.host.url", "https://sonarcloud.io"
     }
 }
 
