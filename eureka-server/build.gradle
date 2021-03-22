@@ -27,8 +27,6 @@ repositories {
 sonarqube {
     properties {
         property "sonar.projectKey", "ax_microservice-discovery-eureka_eureka_server"
-        property "sonar.organization", "yarielinfante"
-        property "sonar.host.url", "https://sonarcloud.io"
     }
 }
 
