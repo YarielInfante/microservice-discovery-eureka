@@ -21,7 +21,7 @@ public class ReviewsApplication {
         IReviewRepository reviewRepository;
 
         @GetMapping("/")
-        ResponseEntity getAll() {
+        public ResponseEntity getAll() {
 
             System.out.println("/books");
             return ResponseEntity.ok(reviewRepository.findAll());
