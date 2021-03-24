@@ -9,6 +9,6 @@ public class Tests {
     @Test
     public void test1(){
         boolean test = true;
-        Assert.isTrue(test, "it is false");
+        Assert.isTrue(test, "it issssss false");
     }
 }
