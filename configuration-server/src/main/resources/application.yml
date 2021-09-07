@@ -3,6 +3,9 @@ spring:
     config:
       server:
         git:
-          uri: ${HOME}/microservice_lab/config
+          uri: ${HOME}projects/personal/microservice-discovery-eureka/configuration-server/src/main/resources
 server:
  port: 8888
+
+ app:
+   greet: Hello

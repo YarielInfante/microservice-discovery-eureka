@@ -25,6 +25,6 @@ public class BookIntegrationService {
 
 
     public Observable<Book> getBookFallBack(int bookId) {
-        return Observable.just(Book.of(1, "Oracle", "Java ee 6", 50, ""));
+        return Observable.just(Book.of(1, "Oracle222222", "Java ee 6", 50, ""));
     }
 }

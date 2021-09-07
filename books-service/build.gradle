@@ -1,57 +1,36 @@
-buildscript {
-    ext {
-        springBootVersion = '2.0.3.RELEASE'
-    }
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-    }
-}
+
 
 plugins {
+    id 'org.springframework.boot' version '2.4.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
-    id 'idea'
-    id 'org.springframework.boot'
-    id 'io.spring.dependency-management'
-    id "org.sonarqube" version "3.1.1"
 }
 
-group = 'com.devcore.library'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.8
+group 'com.gbh'
+version '1.0.0'
+
 
 repositories {
     mavenCentral()
 }
 
-sonarqube {
-    properties {
-        property "sonar.projectKey", "ax_microservice-discovery-eureka_book_service"
-        property "sonar.organization", "yarielinfante"
-        property "sonar.host.url", "https://sonarcloud.io"
-    }
-}
 
-
-dependencyManagement {
-    imports {
-        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Finchley.RELEASE'
-    }
-}
-
-repositories {
-    maven {
-        url 'https://repo.spring.io/libs-milestone'
-    }
-}
 dependencies {
-    compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
-    compile('org.springframework.boot:spring-boot-starter-data-jpa')
-    compile("org.springframework.boot:spring-boot-starter-data-rest")
-    runtime('org.springframework.boot:spring-boot-devtools')
-    runtime('mysql:mysql-connector-java')
-    compileOnly('org.projectlombok:lombok')
-    testCompile('org.springframework.boot:spring-boot-starter-test')
+    implementation project(":service-lib")
+    implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:3.0.3')
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+    implementation('org.springframework.boot:spring-boot-starter-data-rest')
+    runtimeOnly('org.springframework.boot:spring-boot-devtools')
+    runtimeOnly('mysql:mysql-connector-java:8.0.25')
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.20'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+    testImplementation('org.springframework.boot:spring-boot-starter-test:2.5.4')
+}
+
+
+test {
+    useJUnitPlatform()
 }

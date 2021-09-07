@@ -3,10 +3,13 @@ server:
   servlet:
     context-path: /library/books
 spring:
+  application:
+    name: books-service
   datasource:
-    url: jdbc:mysql://localhost:3305/books?useUnicode=true&characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://localhost:3306/books?useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false
     username: root
     password: mysql
   jpa:
     show-sql: true
-
+  main:
+    allow-bean-definition-overriding: true

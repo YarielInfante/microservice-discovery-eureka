@@ -18,11 +18,11 @@ import java.util.stream.Collectors;
 public class BookResource {
 
 
-    private IBookService bookService;
-    private IReviewService reviewService;
-    private ICustomerService customerService;
-    private BookIntegrationService bookIntegrationService;
-    private ReviewIntegrationService reviewIntegrationService;
+    private final IBookService bookService;
+    private final IReviewService reviewService;
+    private final ICustomerService customerService;
+    private final BookIntegrationService bookIntegrationService;
+    private final ReviewIntegrationService reviewIntegrationService;
 
     @Autowired
     @SuppressWarnings("ALL")

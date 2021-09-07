@@ -27,7 +27,7 @@ public class BookApplication {
         public ResponseEntity getBooks() throws JsonProcessingException {
             Iterable<Book> all = bookRepository.findAll();
 
-
+            System.out.println("books");
             return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body(new ObjectMapper().writeValueAsString(all));
         }
     }

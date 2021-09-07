@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/page")
+@RequestMapping("/")
 public class PageResource {
 
     @Autowired
@@ -22,7 +22,7 @@ public class PageResource {
 
     @GetMapping("/{pageId}/book/{bookId}/{contentType}")
     public ResponseEntity findPageById(@PathVariable("bookId") int bookId, @PathVariable("pageId") int pageId, @PathVariable("contentType") String contentType) {
-
+        System.out.println("pages");
         Page page = pageService.findByBookIdAndNumber(bookId, pageId);
 
         if (page != null) {

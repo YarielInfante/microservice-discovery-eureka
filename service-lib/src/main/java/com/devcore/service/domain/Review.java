@@ -1,10 +1,10 @@
-package com.devcore.library.review.domain;
+package com.devcore.service.domain;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document(collection = "reviews")
 @Data
 public class Review {
     @Id

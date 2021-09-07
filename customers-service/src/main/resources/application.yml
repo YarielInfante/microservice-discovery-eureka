@@ -6,5 +6,5 @@ spring:
   data:
     mongodb:
       database: customers
-      username: mongo
-      password: mongo
+#      username: mongo
+#      password: mongo

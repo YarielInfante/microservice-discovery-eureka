@@ -1,9 +1,11 @@
-rootProject.name = 'library'
+rootProject.name = 'gs-multi-module'
+
+include 'library'
+include 'application'
+include 'service-lib'
 include 'api-gateway'
-include 'books-service'
-include 'customers-service'
-include 'pages-service'
-include 'reviews-service'
 include 'eureka-server'
-include 'configuration-server'
+include 'books-service'
+include 'reviews-service'
+include 'customer-service'
 

@@ -4,11 +4,18 @@ server:
     context-path: /library/reviews
 
 spring:
+  application:
+    name: reviews-service
   data:
     mongodb:
       database: reviews
     rest:
       default-media-type: application/json
 
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
 
 

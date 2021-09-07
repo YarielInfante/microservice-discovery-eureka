@@ -1,7 +1,7 @@
 package com.devcore.apigateway.service;
 
-import com.devcore.apigateway.domain.Review;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.devcore.service.api.reviews.ReviewApi;
+import com.devcore.service.api.reviews.json.ReviewDto;
 import org.springframework.stereotype.Service;
 import rx.Observable;
 
@@ -11,14 +11,13 @@ import java.util.List;
 public class ReviewIntegrationService {
 
 
-    private IReviewService reviewService;
+    private final ReviewApi reviewService;
 
-    @SuppressWarnings("ALL")
-    public ReviewIntegrationService(@Autowired IReviewService reviewService) {
+    public ReviewIntegrationService(ReviewApi reviewService) {
         this.reviewService = reviewService;
     }
 
-    public Observable<List<Review>> getReviews(int bookId) {
+    public Observable<List<ReviewDto>> getReviews(int bookId) {
         return Observable.fromCallable(() -> reviewService.getByBookId(bookId));
     }
 }

@@ -5,12 +5,13 @@ import com.devcore.apigateway.domain.Book;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
 
-@FeignClient("http://books-service")
+@FeignClient("books-service")
 public interface IBookService {
 
     @GetMapping("/library/books/book/{bookId}")

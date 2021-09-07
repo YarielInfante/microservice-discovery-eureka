@@ -5,7 +5,3 @@ management:
     web:
       exposure:
         include: '*'
-
-
-application:
-  greeting: from app

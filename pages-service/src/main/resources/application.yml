@@ -4,12 +4,13 @@ server:
     context-path: /library/pages
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3305/pages?useUnicode=true&characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://localhost:3306/pages?useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
     password: mysql
   jpa:
     show-sql: true
-
+  main:
+    allow-bean-definition-overriding: true
 
 application:
   page:

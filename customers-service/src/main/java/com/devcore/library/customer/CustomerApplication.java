@@ -20,7 +20,7 @@ public class CustomerApplication {
         @GetMapping("/{customerId}")
         @ResponseBody
         ResponseEntity getCustomer(@PathVariable String customerId) {
-
+            System.out.println("customer");
             return ResponseEntity.ok(customerRepository.findById(customerId));
 
         }
