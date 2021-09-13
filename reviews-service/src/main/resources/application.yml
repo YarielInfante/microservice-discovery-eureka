@@ -1,7 +1,7 @@
 server:
   port: 8083
   servlet:
-    context-path: /library/reviews
+    context-path: /reviews
 
 spring:
   application:
@@ -11,7 +11,14 @@ spring:
       database: reviews
     rest:
       default-media-type: application/json
-
+  datasource:
+    url: jdbc:mysql://localhost:3306/books?useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: mysql
+  jpa:
+    show-sql: true
+  main:
+    allow-bean-definition-overriding: true
 
 eureka:
   client:

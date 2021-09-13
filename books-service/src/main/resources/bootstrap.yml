@@ -2,12 +2,3 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-  instance:
-    appname: reporting-engine
-server:
-  port: 0
-instance:
-  preferIpAddress: true
-spring:
-  application:
-    name: reporting-engine

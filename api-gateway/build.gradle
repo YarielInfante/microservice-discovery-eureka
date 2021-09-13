@@ -1,10 +1,11 @@
 
 
 plugins {
-    id 'org.springframework.boot' version '2.0.3.RELEASE'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'org.springframework.boot' version '2.3.7.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
     id 'java'
 }
+
 
 group 'com.gbh'
 version '1.0.0'
@@ -12,26 +13,19 @@ version '1.0.0'
 repositories {
     mavenCentral()
 }
+
 ext {
-    set('springCloudVersion', "Finchley.RELEASE")
+    set('springCloudVersion', "Hoxton.SR9")
 }
+
 dependencies {
-    implementation project(':service-lib')
-    implementation('org.springframework.boot:spring-boot-starter-actuator')
-    implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
-    implementation('org.springframework.cloud:spring-cloud-starter-netflix-ribbon')
-    implementation('org.springframework.cloud:spring-cloud-starter-netflix-hystrix')
-    implementation('org.springframework.cloud:spring-cloud-starter-netflix-hystrix-dashboard')
-    implementation('org.springframework.cloud:spring-cloud-starter-openfeign')
-    implementation('org.springframework.cloud:spring-cloud-starter-config')
-    implementation('org.springframework.data:spring-data-rest-hal-browser')
-
-    compileOnly 'org.projectlombok:lombok:1.18.20'
-    annotationProcessor 'org.projectlombok:lombok:1.18.20'
-
-    testCompileOnly 'org.projectlombok:lombok:1.18.20'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+    runtimeOnly('org.springframework.boot:spring-boot-devtools')
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-zuul'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
 }
 
 

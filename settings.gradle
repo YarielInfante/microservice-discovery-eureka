@@ -1,4 +1,4 @@
-rootProject.name = 'gs-multi-module'
+rootProject.name = 'library'
 
 include 'library'
 include 'application'

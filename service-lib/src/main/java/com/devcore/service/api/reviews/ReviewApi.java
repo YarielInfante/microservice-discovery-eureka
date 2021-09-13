@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-@FeignClient("reviews-service")
+@FeignClient("http://reviews-service")
 public interface ReviewApi {
     @GetMapping("/")
     List<ReviewDto> getAll();

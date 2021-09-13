@@ -30,7 +30,7 @@ dependencies {
 
     implementation("io.github.openfeign:feign-httpclient:10.10.1")
     implementation('org.springframework.cloud:spring-cloud-starter-openfeign:3.0.3')
-
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
     implementation("org.springframework.boot:spring-boot-starter-data-rest")
     runtimeOnly('org.springframework.boot:spring-boot-devtools')
     compileOnly 'org.projectlombok:lombok:1.18.20'

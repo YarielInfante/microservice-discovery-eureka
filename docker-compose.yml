@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  customer-service:
+    image: customer-service
+    depends_on:
+      - mongo
+    ports:
+      - "8000:8000"
+    networks:
+      - library
+
+  mongo:
+    image: 'mongo'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+    networks:
+      - library
+
+networks:
+  library:
