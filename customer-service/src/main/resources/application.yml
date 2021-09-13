@@ -1,0 +1,20 @@
+server:
+  port: 8000
+  servlet:
+    context-path: /customers
+spring:
+  application:
+    name: customer-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/books?useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: mysql
+  jpa:
+    show-sql: true
+  main:
+    allow-bean-definition-overriding: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
