@@ -6,10 +6,19 @@ spring:
   application:
     name: books-service
   datasource:
-    url: jdbc:mysql://localhost:3306/books?useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false
+    url: jdbc:mysql://host.docker.internal:3306/books?useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false
     username: root
     password: mysql
   jpa:
     show-sql: true
   main:
     allow-bean-definition-overriding: true
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://eureka-service:8761/eureka}

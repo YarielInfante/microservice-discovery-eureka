@@ -2,21 +2,79 @@ version: "3"
 
 services:
   customer-service:
-    image: customer-service
+    build:
+      context: ./customer-service
     depends_on:
+      - eureka-service
       - mongo
+      - mysql
     ports:
       - "8000:8000"
     networks:
       - library
 
+  apigateway-service:
+    build:
+      context: ./api-gateway
+    ports:
+      - "8900:8900"
+    depends_on:
+      - eureka-service
+      - mongo
+      - mysql
+    networks:
+      - library
+
+  eureka-service:
+    build:
+      context: ./eureka-server
+    ports:
+      - "8761:8761"
+    networks:
+      - library
+
+  books-service:
+    build:
+      context: ./books-service
+    ports:
+      - "8080:8080"
+    depends_on:
+      - eureka-service
+      - mongo
+      - mysql
+    networks:
+      - library
+
+  review-service:
+    build:
+      context: ./reviews-service
+    depends_on:
+      - eureka-service
+      - mongo
+      - mysql
+    ports:
+      - "8083:8083"
+    networks:
+      - library
+
   mongo:
     image: 'mongo'
+    ports:
+      - "27017:27017"
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: password
     networks:
       - library
+
+  mysql:
+    build:
+      context: ./config
+    ports:
+      - '3306:3306'
+    networks:
+      - library
+
 
 networks:
   library:
